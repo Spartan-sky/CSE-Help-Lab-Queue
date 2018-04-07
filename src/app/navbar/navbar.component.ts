@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Test } from './test';
-import { TEST } from './test-list';
-import { TestService } from './test.service';
+import { checkAndUpdateDirectiveDynamic } from '@angular/core/src/view/provider';
+//import { TEST } from './test-list';
 
 @Component({
   selector: 'app-navbar',
@@ -10,21 +10,43 @@ import { TestService } from './test.service';
 })
 export class NavbarComponent implements OnInit {
 
-  //testList = TEST;
-  testList: Test[];
-  selectedTest: Test;
+  count: number = 0; 
 
-  constructor(private testService: TestService) { }
+  btntext: string = 'Enter: ';
+  inputNum: number =0;
+  inputText: string;
+  inputText2: string;
+  inputText3: string;
+  tempNum: number = 0;
+  tempCourse: string;
+  tempProff: string;
+  tempName: string =null;
+  list:Test[] = [];
+  selectedTest: Test[];
+  tempObj: Test;
+  
+  constructor() { }
 
   ngOnInit() {
-    this.getTestList();
+    this.count = this.list.length;
   }
+
+  set() {
+    this.tempName = this.inputText;
+    this.tempNum = this.inputNum;
+    this.tempCourse = this.inputText2;
+    this.tempProff = this.inputText3;
+    this.addItem();
+  }
+
+  addItem() {
+    this.tempObj = new Test(this.tempNum, this.tempName, this.tempCourse, this.tempProff);
+    this.list.push(this.tempObj);
+  }
+
 
   onSelect(test: Test): void {
-    this.selectedTest = test;
+    this.selectedTest = this.list;
   }
 
-  getTestList(): void {
-    this.testList = this.testService.getTestList();
-  }
 }

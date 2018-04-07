@@ -1,9 +1,19 @@
-<h2>Test List</h2>
-<ul class="testList">
-  <li *ngFor="let test of testList"
+<h2>List</h2>
+
+
+<form>
+  <input type="number" name="ID" min="1" max="99999999" [(ngModel)]="inputNum">
+  <input type= "text" class="txt" name="item" placeholder="Name: " [(ngModel)]="inputText">
+  <input type= "text" class="txt" name="item2" placeholder="Course: " [(ngModel)]="inputText2">
+  <input type= "text" class="txt" name="item3" placeholder="Proffesor: " [(ngModel)]="inputText3">
+ <input type="submit" class="btn" [value]="btntext" (click)="set()">  
+</form>
+
+<ul class="list">
+  <li *ngFor="let test of list"
     [class.selected]="test === selectedTest"
     (click)="onSelect(test)">
-    <span class="badge">{{test.id}}</span> {{test.name}}
+    <span>{{test.id}}</span> {{test.name}} {{test.course}} {{test.proff}}
   </li>
 </ul>
 
@@ -11,10 +21,10 @@
 
 <div *ngIf="selectedTest">
   <h2>*ngFor</h2>
-  <ul class = "testlist"
+  <ul class = "list"
     [class.selected]="hero === selectedTest"
     (click)="onSelect(test)">
-    <li *ngFor = "let test of testList" (click)="onSelect(test)">
+    <li *ngFor = "let test of list" (click)="onSelect(test)">
       {{test.id}} - {{test.name}}
     </li>
   </ul>
