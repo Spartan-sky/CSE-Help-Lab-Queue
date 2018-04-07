@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Test } from './test';
+import { TEST } from './test-list';
 
 @Component({
   selector: 'app-navbar',
@@ -7,16 +8,18 @@ import { Test } from './test';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  test: Test = {
-    id: 1,
-    name: 'Bob'
-  };
 
-  death = 'ayelmao';
+  testList = TEST;
+
+  selectedTest: Test;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onSelect(test: Test): void {
+    this.selectedTest = test;
   }
 
 }

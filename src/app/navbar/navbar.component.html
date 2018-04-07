@@ -1,7 +1,31 @@
-<h2>{{ death }}</h2>
+<h2>Test List</h2>
+<ul class="testList">
+  <li *ngFor="let test of testList"
+    [class.selected]="test === selectedTest"
+    (click)="onSelect(test)">
+    <span class="badge">{{test.id}}</span> {{test.name}}
+  </li>
+</ul>
 
-<div>
-  <label>{{test.name}}:
-    <input [(ngModel)]="test.name" placeholder="name">
-  </label>
+
+
+<div *ngIf="selectedTest">
+  <h2>*ngFor</h2>
+  <ul class = "testlist"
+    [class.selected]="hero === selectedTest"
+    (click)="onSelect(test)">
+    <li *ngFor = "let test of testList" (click)="onSelect(test)">
+      {{test.id}} - {{test.name}}
+    </li>
+  </ul>
+</div>
+
+<div *ngIf="selectedTest">
+  <h2>Input</h2>
+  <div><span>id: </span>{{selectedTest.id}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="selectedTest.name" placeholder="name">
+    </label>
+  </div>
 </div>
