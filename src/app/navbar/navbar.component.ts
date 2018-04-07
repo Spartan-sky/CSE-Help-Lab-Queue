@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Test } from './test';
 import { TEST } from './test-list';
+import { TestService } from './test.service';
 
 @Component({
   selector: 'app-navbar',
@@ -9,17 +10,21 @@ import { TEST } from './test-list';
 })
 export class NavbarComponent implements OnInit {
 
-  testList = TEST;
-
+  //testList = TEST;
+  testList: Test[];
   selectedTest: Test;
 
-  constructor() { }
+  constructor(private testService: TestService) { }
 
   ngOnInit() {
+    this.getTestList();
   }
 
   onSelect(test: Test): void {
     this.selectedTest = test;
   }
 
+  getTestList(): void {
+    this.testList = this.testService.getTestList();
+  }
 }
