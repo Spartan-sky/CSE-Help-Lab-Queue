@@ -7,4 +7,6 @@
 .back {
     background-image: url('./background.png');
     background-color: #cccccc;
+    background-repeat: no-repeat;
+    background-position: 50%;
 }
