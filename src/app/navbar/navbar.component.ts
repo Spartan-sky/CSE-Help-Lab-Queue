@@ -49,8 +49,22 @@ export class NavbarComponent implements OnInit {
   onSelect(test: Test): void {
     this.selectedTest = test;
   }
-  deletenow()
+  deletenow(temptext :number)
   {
-    this.list.shift();
+    
+    var i;
+    i=this.list.indexOf(temptext);
+   this.list.splice(i,1);
+    //this.list.splice(temptext,1)
+    for(i=0; i <this.count;i++)
+    {
+       
+      /*if(temptext=== this.list[i].id)
+      {
+        this.list.splice(i,1);
+      }*/
+      
+    }
+    //this.list.shift();
   }
 }
