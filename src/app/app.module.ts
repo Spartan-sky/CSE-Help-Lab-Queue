@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
 import {TestService } from './navbar/test.service';
+import { TableComponent } from './table/table.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,

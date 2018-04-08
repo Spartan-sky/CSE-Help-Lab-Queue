@@ -1,0 +1,44 @@
+
+/*body { 
+   background-image: url("unt.png");
+    background-color: #cccccc;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:   100pt;
+    background-position-x: 50pt 
+ }
+*/
+
+table{
+
+    border-collapse: collapse;
+    }
+
+    table th{
+        
+        text-align: left;
+        background-color: #3a6070;
+        color: #FFF;
+        border: 1px solid #e3e3e3; 
+    
+        padding: 20px 40px 10px 20px;
+    
+    
+    }
+    
+    table td {
+        text-align:left;
+        border: 1px solid #e3e3e3; 
+        padding: 6px 30px 6px 10px;
+    }
+    
+    table tr:nth-child(odd) td{
+    
+        background-color: #e7edf0;
+    }
+
+
+    button{
+        padding: 10px 10px;
+    
+    }

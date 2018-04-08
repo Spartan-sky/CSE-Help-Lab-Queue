@@ -22,10 +22,11 @@ export class NavbarComponent implements OnInit {
   tempProff: string;
   tempName: string =null;
   list:Test[] = [];
-  selectedTest: Test[];
+  selectedTest: Test;
   tempObj: Test;
   
   constructor() { }
+
 
   ngOnInit() {
     this.count = this.list.length;
@@ -46,7 +47,10 @@ export class NavbarComponent implements OnInit {
 
 
   onSelect(test: Test): void {
-    this.selectedTest = this.list;
+    this.selectedTest = test;
   }
-
+  deletenow()
+  {
+    this.list.shift();
+  }
 }
