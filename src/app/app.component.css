@@ -1,0 +1,10 @@
+.pad {
+    padding-left: 30px;
+    padding-right: 30px;
+    float: left;
+}
+
+.back {
+    background-image: url('./background.png');
+    background-color: #cccccc;
+}

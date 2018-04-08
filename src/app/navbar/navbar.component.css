@@ -1,5 +1,5 @@
-
-/*body { 
+/*
+body { 
    background-image: url("unt.png");
     background-color: #cccccc;
     background-position: center;
@@ -9,6 +9,23 @@
  }
 */
 
+/* .background {
+    background:url ('https://identityguide.unt.edu/sites/default/files/est_1890_unt_university_of_north_texas_mcconnel_green.png');
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.layer {
+    background-color: rbga(248, 247, 216, 0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+} */
+
+
 table{
 
     border-collapse: collapse;
@@ -17,7 +34,7 @@ table{
     table th{
         
         text-align: left;
-        background-color: #3a6070;
+        background-color: #00853e;
         color: #FFF;
         border: 1px solid #e3e3e3; 
     
