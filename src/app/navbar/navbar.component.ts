@@ -49,11 +49,11 @@ export class NavbarComponent implements OnInit {
   onSelect(test: Test): void {
     this.selectedTest = test;
   }
-  deletenow(temptext :number)
+  deletenow(temptext :Test)
   {
     
     var i;
-    i=this.list.indexOf(temptext);
+    i=this.list.indexOf(temptext, 0);
    this.list.splice(i,1);
     //this.list.splice(temptext,1)
     for(i=0; i <this.count;i++)
